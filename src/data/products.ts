@@ -1,0 +1,202 @@
+export type ProductCategory = 'oil' | 'olive';
+
+export type OilIntensity = 'douce' | 'tres-douce' | 'intense' | 'traditionnelle' | 'flavored' | 'moyenne';
+
+export interface Product {
+  id: string;
+  name: string;
+  nameAr?: string;
+  category: ProductCategory;
+  intensity?: OilIntensity;
+  description: string;
+  descriptionAr?: string;
+  price: number;
+  sizes: {
+    volume: string;
+    price: number;
+  }[];
+  image: string;
+  awards?: string[];
+  labels?: string[];
+  isNew?: boolean;
+  isBestseller?: boolean;
+}
+
+export const products: Product[] = [
+  {
+    id: 'oil-douce',
+    name: 'ZitSouss Douce',
+    nameAr: 'زيت سوس خفيفة',
+    description: 'Une huile d\'olive vierge extra douce, idéale pour la cuisine quotidienne.',
+    descriptionAr: 'زيت زيتون بكر ممتاز خفيف، مثالي للطبخ اليومي.',
+    price: 65,
+    image: 'https://images.unsplash.com/photo-1474979266404-7cadd259c308?q=80&w=2070&auto=format&fit=crop',
+    category: 'oil',
+    sizes: [
+      { volume: '500ml', price: 65 },
+      { volume: '1L', price: 120 },
+      { volume: '5L', price: 550 },
+    ],
+    isNew: true,
+    intensity: 'douce',
+    labels: ['bio'],
+  },
+  {
+    id: 'oil-intense',
+    name: 'ZitSouss Intense',
+    nameAr: 'زيت سوس قوية',
+    description: 'Huile de caractère avec des notes poivrées, parfaite pour les salades.',
+    descriptionAr: 'زيت ذات طابع قوي مع نكهات فلفلية، مثالية للسلطات.',
+    price: 75,
+    image: 'https://images.unsplash.com/photo-1541447270888-83e8494f9c06?q=80&w=1976&auto=format&fit=crop',
+    category: 'oil',
+    sizes: [
+      { volume: '500ml', price: 75 },
+      { volume: '1L', price: 140 },
+      { volume: '3L', price: 400 },
+    ],
+    isBestseller: true,
+    intensity: 'intense',
+    awards: ['gold-2024'],
+  },
+  {
+    id: 'oil-tradition',
+    name: 'ZitSouss Traditionnelle',
+    nameAr: 'زيت سوس تقليدية',
+    description: 'Le goût authentique du terroir marocain, pressée à froid.',
+    descriptionAr: 'الطعم الأصيل للتربة المغربية، معصور على البارد.',
+    price: 70,
+    image: 'https://images.unsplash.com/photo-1574689049597-7e6c8dc2864a?q=80&w=2076&auto=format&fit=crop',
+    category: 'oil',
+    sizes: [
+      { volume: '1L', price: 70 },
+      { volume: '5L', price: 320 },
+    ],
+    intensity: 'moyenne',
+  },
+  {
+    id: 'oil-premium',
+    name: 'ZitSouss Premium Gold',
+    nameAr: 'زيت سوس الذهبية الممتازة',
+    description: 'Édition limitée, issue d\'une récolte précoce sélectionnée.',
+    descriptionAr: 'إصدار محدود، من حصاد مبكر مختار.',
+    price: 150,
+    image: 'https://images.unsplash.com/photo-1620916297397-a4a5402a3c6c?q=80&w=1974&auto=format&fit=crop',
+    category: 'oil',
+    sizes: [
+      { volume: '500ml', price: 150 },
+    ],
+    isNew: true,
+    intensity: 'intense',
+    awards: ['platinum-2023', 'gold-2024'],
+    labels: ['bio'],
+  },
+  {
+    id: 'oil-citron',
+    name: 'Huile au Citron',
+    nameAr: 'زيت بالليمون',
+    description: 'Huile d\'olive aromatisée au citron frais, idéale pour les poissons.',
+    descriptionAr: 'زيت زيتون بنكهة الليمون الطازج، مثالي للأسماك.',
+    price: 85,
+    image: 'https://images.unsplash.com/photo-1615485499978-84386e4a6c21?q=80&w=1974&auto=format&fit=crop',
+    category: 'oil',
+    sizes: [
+      { volume: '250ml', price: 85 },
+      { volume: '500ml', price: 160 },
+    ],
+    intensity: 'douce',
+  },
+  {
+    id: 'olives-vertes',
+    name: 'Olives Vertes Marinées',
+    nameAr: 'زيتون أخضر مخلل',
+    description: 'Olives vertes préparées selon une recette traditionnelle.',
+    descriptionAr: 'زيتون أخضر محضر حسب وصفة تقليدية.',
+    price: 35,
+    image: 'https://images.unsplash.com/photo-1589136777351-943be8017424?q=80&w=2070&auto=format&fit=crop',
+    category: 'olive',
+    sizes: [
+      { volume: '500g', price: 35 },
+      { volume: '1kg', price: 65 },
+    ],
+  },
+  {
+    id: 'olives-noires',
+    name: 'Olives Noires Façon Grecque',
+    nameAr: 'زيتون أسود على الطريقة اليونانية',
+    description: 'Olives noires séchées au soleil et marinées.',
+    descriptionAr: 'زيتون أسود مجفف بالشمس ومخلل.',
+    price: 40,
+    image: 'https://images.unsplash.com/photo-1595855728306-687895e6d426?q=80&w=2070&auto=format&fit=crop',
+    category: 'olive',
+    sizes: [
+      { volume: '500g', price: 40 },
+      { volume: '1kg', price: 75 },
+    ],
+    isBestseller: true,
+  },
+  {
+    id: 'olives-piment',
+    name: 'Olives Cassées au Piment',
+    nameAr: 'زيتون مكسر بالفلفل الحار',
+    description: 'Olives vertes cassées avec une touche épicée.',
+    descriptionAr: 'زيتون أخضر مكسر مع لمسة حارة.',
+    price: 38,
+    image: 'https://images.unsplash.com/photo-1603569283847-aa295f0d016a?q=80&w=1972&auto=format&fit=crop',
+    category: 'olive',
+    sizes: [
+      { volume: '500g', price: 38 },
+      { volume: '1kg', price: 70 },
+    ],
+    intensity: 'intense',
+  },
+  {
+    id: 'tapenade-noire',
+    name: 'Tapenade d\'Olives Noires',
+    nameAr: 'تبي ناد الزيتون الأسود',
+    description: 'Pâte d\'olives noires aux câpres et anchois.',
+    descriptionAr: 'عجينة الزيتون الأسود مع الكبر والأنشوجة.',
+    price: 45,
+    image: 'https://images.unsplash.com/photo-1549590143-d5855148a9d5?q=80&w=1964&auto=format&fit=crop',
+    category: 'olive',
+    sizes: [
+      { volume: '200g', price: 45 },
+    ],
+  },
+  {
+    id: 'coffret-degustation',
+    name: 'Coffret Dégustation',
+    nameAr: 'صندوق التذوق',
+    description: 'Assortiment de 3 huiles (Douce, Intense, Citron).',
+    descriptionAr: 'تشكيلة من 3 زيوت (خفيفة، قوية، ليمون).',
+    price: 250,
+    image: 'https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?q=80&w=1974&auto=format&fit=crop',
+    category: 'oil',
+    sizes: [
+      { volume: '3x250ml', price: 250 },
+    ],
+    isNew: true,
+    labels: ['bio'],
+  },
+  {
+    id: 'savon-olive',
+    name: 'Savon à l\'Huile d\'Olive',
+    nameAr: 'صابون زيت الزيتون',
+    description: 'Savon naturel hydratant à base d\'huile d\'olive.',
+    descriptionAr: 'صابون طبيعي مرطب يعتمد على زيت الزيتون.',
+    price: 25,
+    image: 'https://images.unsplash.com/photo-1600857062241-98e5dba7f214?q=80&w=1998&auto=format&fit=crop',
+    category: 'oil',
+    sizes: [
+      { volume: '100g', price: 25 },
+    ],
+  },
+];
+
+export const getFeaturedProducts = () => {
+  return products.filter((p) => p.isBestseller || p.isNew).slice(0, 4);
+};
+
+export const getProductsByCategory = (category: 'oil' | 'olive') => {
+  return products.filter((p) => p.category === category);
+};

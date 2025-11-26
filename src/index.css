@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap");
+@import "tailwindcss";
+
+/* Define custom theme for Tailwind v4 */
+@theme {
+  /* Custom Fonts */
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-arabic: "Noto Sans Arabic", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+
+  /* Olive Color Palette */
+  --color-olive-50: #f7f8f3;
+  --color-olive-100: #eef0e6;
+  --color-olive-200: #dce1cd;
+  --color-olive-300: #c4ccaa;
+  --color-olive-400: #a7b383;
+  --color-olive-500: #8a9a5b;
+  --color-olive-600: #6d7b47;
+  --color-olive-700: #55603a;
+  --color-olive-800: #464e31;
+  --color-olive-900: #3a402a;
+
+  /* Gold Color Palette */
+  --color-gold-50: #fefce8;
+  --color-gold-100: #fef9c3;
+  --color-gold-200: #fef08a;
+  --color-gold-300: #fde047;
+  --color-gold-400: #facc15;
+  --color-gold-500: #eab308;
+  --color-gold-600: #ca8a04;
+  --color-gold-700: #a16207;
+  --color-gold-800: #854d0e;
+  --color-gold-900: #713f12;
+
+  /* Earth Color Palette */
+  --color-earth-50: #faf9f7;
+  --color-earth-100: #f5f3ef;
+  --color-earth-200: #e8e4dc;
+  --color-earth-300: #d9d2c4;
+  --color-earth-400: #c7bba8;
+  --color-earth-500: #b5a48c;
+  --color-earth-600: #9e8a6f;
+  --color-earth-700: #7e6e59;
+  --color-earth-800: #665949;
+  --color-earth-900: #544a3d;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-gray-900 font-sans;
+    margin: 0;
+  }
+
+  [dir="rtl"] {
+    font-family: var(--font-arabic);
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+
+  .heading-1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold text-olive-900 font-display;
+  }
+
+  .heading-2 {
+    @apply text-3xl md:text-4xl lg:text-5xl font-semibold text-olive-800 font-display;
+  }
+
+  .heading-3 {
+    @apply text-2xl md:text-3xl lg:text-4xl font-semibold text-olive-800 font-display;
+  }
+
+  .heading-4 {
+    @apply text-xl md:text-2xl lg:text-3xl font-semibold text-olive-700;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply px-6 py-3 bg-olive-600 text-white rounded-md font-medium hover:bg-olive-700 transition-colors duration-200 shadow-md hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-gold-500 text-white rounded-md font-medium hover:bg-gold-600 transition-colors duration-200 shadow-md hover:shadow-lg;
+  }
+
+  .btn-outline {
+    @apply px-6 py-3 border-2 border-olive-600 text-olive-600 rounded-md font-medium hover:bg-olive-600 hover:text-white transition-all duration-200;
+  }
+
+  /* Product Cards */
+  .product-card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300;
+  }
+
+  .product-card-image {
+    @apply w-full h-64 object-cover transform hover:scale-105 transition-transform duration-500;
+  }
+
+  /* Moroccan Pattern Background */
+  .moroccan-pattern {
+    background-image: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(138, 154, 91, 0.03) 10px,
+        rgba(138, 154, 91, 0.03) 20px
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 10px,
+        rgba(138, 154, 91, 0.03) 10px,
+        rgba(138, 154, 91, 0.03) 20px
+      );
+  }
+
+  /* Award Medal Styles */
+  .medal-gold {
+    @apply text-gold-500;
+  }
+
+  .medal-silver {
+    @apply text-gray-400;
+  }
+
+  .medal-bronze {
+    @apply text-amber-700;
+  }
+
+  .medal-platinum {
+    @apply text-slate-300;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
